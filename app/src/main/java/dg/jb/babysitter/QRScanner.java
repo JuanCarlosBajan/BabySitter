@@ -40,8 +40,10 @@ public class QRScanner extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(QRScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
-                            //Intent intent = new Intent()
+                            //Toast.makeText(QRScanner.this, result.getText(), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(QRScanner.this, IPCamera.class);
+                            intent.putExtra("ip", result.getText().toString());
+                            startActivity(intent);
                         }
                     });
                 }
